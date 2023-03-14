@@ -25,7 +25,9 @@ class App extends React.Component {
           </ThemedButton>
         </ThemeContext.Provider>
 
-        <ThemedButton>Default Theme</ThemedButton>
+        <ThemedButton onClick={this.toggleTheme}>
+          Default Theme
+        </ThemedButton>
       </div>
     );
   }
