@@ -1,17 +1,6 @@
 import React from 'react';
 import ThemedButton from './ThemedButton';
-import { ThemeContext } from './themes-context';
-
-const themes = {
-  dark: {
-    fontColor: '#ffffff',
-    background: '#222222'
-  },
-  light: {
-    fontColor: '#000000',
-    background: '#eeeeee'
-  }
-};
+import { ThemeContext, themes } from './themes-context';
 
 class App extends React.Component {
   state = {
