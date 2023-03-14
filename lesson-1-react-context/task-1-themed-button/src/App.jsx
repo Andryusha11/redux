@@ -16,7 +16,6 @@ class App extends React.Component {
     });
   };
   render() {
-    console.log(this.state);
     return (
       <div>
         <ThemeContext.Provider value={this.state.theme}>
