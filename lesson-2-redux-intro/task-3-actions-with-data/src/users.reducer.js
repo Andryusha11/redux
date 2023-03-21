@@ -11,9 +11,11 @@ export const usersReducer = (state = initialState, action) => {
         usersList: state.usersList.concat(action.payload)
       };
     case DELETE_USER:
-      return state.usersList.filter(
-        user => user.id !== action.payload.id
-      );
+      return {
+        usersList: state.usersList.filter(
+          user => user.id !== action.payload.id
+        )
+      };
     default:
       return state;
   }
