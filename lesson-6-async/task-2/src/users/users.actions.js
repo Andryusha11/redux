@@ -20,10 +20,9 @@ export const userDataReceived = userData => {
 
 export const fetchUserData = userName => {
   return function (dispatch) {
-    console.log('i am async function');
-    // dispatch(showSpinner());
-    // getUserData(userName).then(userData =>
-    //   dispatch(userDataReceived(userData))
-    // );
+    dispatch(showSpinner());
+    getUserData(userName).then(userData =>
+      dispatch(userDataReceived(userData))
+    );
   };
 };

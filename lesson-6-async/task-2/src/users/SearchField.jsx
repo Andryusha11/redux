@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import * as usersActions from './users.actions';
-import { getUserData } from './users.gateway';
 
-const SearchField = ({
-  showSpinner,
-  userDataReceived,
-  fetchUserData
-}) => {
+const SearchField = ({ fetchUserData }) => {
   const [userName, setUserName] = useState('');
 
   const onChange = event => {
@@ -15,7 +10,6 @@ const SearchField = ({
   };
 
   const handleUserSearch = () => {
-    // showSpinner();
     fetchUserData(userName);
   };
   return (
@@ -37,8 +31,6 @@ const SearchField = ({
 };
 
 const mapDispatch = {
-  // showSpinner: usersActions.showSpinner,
-  // userDataReceived: usersActions.userDataReceived,
   fetchUserData: usersActions.fetchUserData
 };
 
