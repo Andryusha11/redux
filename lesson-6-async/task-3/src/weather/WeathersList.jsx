@@ -5,9 +5,9 @@ import * as weatherActions from './weather.actions';
 import { useEffect } from 'react';
 import WeathersLIstItem from './WeathersLIstItem';
 
-const WeathersList = ({ weatherData, fetchWeatherData }) => {
+const WeathersList = ({ weatherData, getWeatherData }) => {
   useEffect(() => {
-    fetchWeatherData();
+    getWeatherData();
   }, []);
 
   if (!weatherData) {
@@ -34,7 +34,7 @@ const mapState = state => {
 };
 
 const mapDispatch = {
-  fetchWeatherData: weatherActions.fetchWeatherData
+  getWeatherData: weatherActions.getWeatherData
 };
 
 export default connect(mapState, mapDispatch)(WeathersList);
