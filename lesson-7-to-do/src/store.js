@@ -1,7 +1,6 @@
 import {
   createStore,
   applyMiddleware,
-  compose,
   combineReducers
 } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -21,9 +20,6 @@ const logger = store => next => action => {
   return result;
 };
 
-// const composeEnhancers = compose;
-// window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
-
 const store = createStore(
   reducer,
   composeWithDevTools(
@@ -31,10 +27,5 @@ const store = createStore(
     applyMiddleware(logger)
   )
 );
-
-// const store = createStore(
-//   reducer,
-//   composeEnhancers(applyMiddleware(thunk), applyMiddleware(logger))
-// );
 
 export default store;
