@@ -1,9 +1,9 @@
 import {
   createStore,
   applyMiddleware,
+  compose,
   combineReducers
 } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import tasksReducer from './tasks/tasks.reducer';
 
@@ -20,12 +20,12 @@ const logger = store => next => action => {
   return result;
 };
 
+const composeEnhancers = compose;
+// window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
+
 const store = createStore(
   reducer,
-  composeWithDevTools(
-    applyMiddleware(thunk),
-    applyMiddleware(logger)
-  )
+  composeEnhancers(applyMiddleware(thunk), applyMiddleware(logger))
 );
 
 export default store;
