@@ -1,9 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { PropTypes } from 'prop-types';
 import classNames from 'classnames';
 
 const Task = ({ id, done, text, onChange, onDelete }) => {
-  const listItemClasses = classNames('list-item', { 'list-item_done': done });
+  const listItemClasses = classNames('list-item', {
+    'list-item_done': done
+  });
 
   return (
     <li className={listItemClasses}>
@@ -27,11 +29,11 @@ Task.propTypes = {
   done: PropTypes.bool,
   text: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired
 };
 
 Task.defaultProps = {
-  done: false,
+  done: false
 };
 
 export default Task;

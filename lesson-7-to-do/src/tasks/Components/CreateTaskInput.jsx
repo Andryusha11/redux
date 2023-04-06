@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { PropTypes } from 'prop-types';
 
 const CreateTaskInput = ({ onCreate }) => {
   const [inputValue, setInputValue] = useState('');
@@ -25,6 +25,10 @@ const CreateTaskInput = ({ onCreate }) => {
       </button>
     </div>
   );
+};
+
+CreateTaskInput.propTypes = {
+  onCreate: PropTypes.func.isRequired
 };
 
 export default CreateTaskInput;

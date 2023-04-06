@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import Task from './Task';
 import CreateTaskInput from './CreateTaskInput';
-import { connect } from 'react-redux';
 import { tasksListSelector } from '../tasks.selectors';
 import * as tasksActions from '../tasks.actions';
 
@@ -32,6 +33,14 @@ const TasksList = ({
       </ul>
     </main>
   );
+};
+
+TasksList.propTypes = {
+  tasks: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  getTasksList: PropTypes.func.isRequired,
+  updateTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
+  createTask: PropTypes.func.isRequired
 };
 
 const mapState = state => {
